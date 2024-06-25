@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+    pollSCM('* * * * *')
+}
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,12 +16,6 @@ pipeline {
             steps {
                 sh 'python3 -m unittest discover'
             }
-        }
-    }
-
-    post {
-        always {
-            junit 'test-reports/*.xml'
         }
     }
 }
