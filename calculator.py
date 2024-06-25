@@ -9,6 +9,7 @@ if __name__ == "__main__":
         num2 = float(sys.argv[2])
     except ValueError:
         print("Both arguments must be numbers.")
+        print("Pipe test")
         sys.exit(1)
 
     result = multiply(num1, num2)
